@@ -1,0 +1,50 @@
+GENERAL ARCHITECTURE
+	SSO: Allows users to log in to ViFi using any number of external accout credentials such as Google, Salesforce, Linken, etc
+	Federated:  
+
+
+
+
+
+
+
+
+WSO2 NATIVE TOOLS
+KEY GENERATION:
+First K is wrongfully capitalized, replace with k
+keytool -export -alias wso2carbon -file wso2.crt -keystore wso2carbon.jks -storepass wso2carbon
+
+
+JAVA
+Invalid key length or security configuration
+	Due to the default limited security policy being used as opposed to unlimited.
+	Java 1.8_151 and > come with both limited and unlimited preinstalled but require edit to /<IS_HOME>
+
+
+SALESFORCE
+Signature Hash Type in Salesforce SSO settings
+https://jbpdevaddress-dev-ed.my.salesforce.com?so=00D1I000001gsiO
+
+
+FRESHDESK
+Can't setup password policies while SSO enabled
+	 This is by design, no issue
+
+
+POSSIBLE FUTURE ISSUES:
+Warning
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore wso2carbon.jks -destkeystore wso2carbon.jks -deststoretype pkcs12".
+
+
+
+
+
+
+
+
+TEMPORARY INFO
+
+SSO Login Error - Due to timestamps
+Login Failure			18:51:19.015
+Time Limit Conditions	18:59:15.402
+Timestamp 				18:51:15.402
