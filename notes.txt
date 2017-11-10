@@ -39,6 +39,91 @@ The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS
 
 
 
+			SSO Configuration
+
+/usr/local/bin/wso2-5.3.0/repository/resources/security/wso2.crt
+ws02.crt
+	Contains md5, sha1 and sha256
+	Signed with 'SHA1withRSA' 1024 bit key
+	Alias: wso2carbon
+
+
+Salesforce Account Info
+	username 			jbpdevaddress@uncc.com
+	custom domain		jbpdevaddress-dev-ed.my.salesforce.com
+	email				jbpdevaddress@gmail.com
+
+Salesforce Account Settings
+	IdP Login url: 		https://localhost:9443/samlsso
+	IdP Cert:			Looks like it's wso2.crt...
+	Request Sig Cert:	SelfSignedCert (Confused again, this cert is 2048 bit)
+	Request Sig Method:	RSA-SHA1
+	Assertion isn't being encrypted right now
+
+WSO2 Account Settings
+	Claim Config : email
+	SAML2 Web SSO Config:
+		Issuer:		https://saml.salesforce.com
+		Assertion: 	https://jbpdevaddress-dev-ed.my.salesforce.com?so=00D1I000001gsiO
+		Alias: 		wso2carbon.crt (this seems wrong??): The alias for the wso2.crt is wso2carbon, there is no wso2carbon.crt??
+		Response Sign:	rsa-sha1
+		Response Digest: sha1
+		Assertion isn't being encrypted
+
+
+Logs out at Salesforce
+					
+
+
+
+
+
+Freshdesk Account Info
+	username
+	custom domain		uncc.freshdesk.com
+	email				jbpdevaddress@gmail.com
+
+Freshdesk Account Settings
+	IdP Login url:		https://localhost:9443/samlsso
+	SHA1 Fingerprint from wso2.cert used a credential, this is used because cert is signed with SHA1
+
+WSO2 Account Settings
+	Claim Config : email
+	SAML2 Web SSO Config:
+		Issuer: 	uncc.freshdesk.com
+		Assertion: 	https://uncc.freshdesk.com/login/saml
+		Alias: 		wso2carbon.crt (this seems wrong??): The alias for the wso2.crt is wso2carbon, there is no wso2carbon.crt??
+					Salesforce still works also even though the assertion is being encrypted?
+		Response Sign:	rsa-sha256 (This shouldn't be correct either I don't think? The cert signature is hashed with sha1?)
+						Still works because reponse isn't being signed??
+		Response Digest: sha256
+
+
+Logs out at WSO2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
