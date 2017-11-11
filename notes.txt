@@ -71,6 +71,7 @@ WSO2 Account Settings
 		Assertion isn't being encrypted
 
 
+Observations
 Logs out at Salesforce
 					
 
@@ -99,37 +100,7 @@ WSO2 Account Settings
 		Response Digest: sha256
 
 
+Observations
 Logs out at WSO2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-TEMPORARY INFO
-
-SSO Login Error - Due to timestamps
-Login Failure			18:51:19.015
-Time Limit Conditions	18:59:15.402
-Timestamp 				18:51:15.402
+Email address in WSO2 maps to 'Full Name' attribute in Freshdesk and is required in WSO2.
+User only needs BasicUser permissions for SSO, I believe b/c BU has Login permissions.
